@@ -54,13 +54,13 @@ HRESULT __stdcall hkPresent(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT 
 
 	auto flags = ImGuiConfigFlags_NoMouseCursorChange | ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoScrollbar | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_AlwaysAutoResize;
 
-	// Открытие Меню
+	// ГЋГІГЄГ°Г»ГІГЁГҐ ГЊГҐГ­Гѕ
 	if (GetAsyncKeyState(VK_HOME) & 1) {
 
 		openmenu = !openmenu;
 	}
 
-	// Отключить чит
+	// ГЋГІГЄГ«ГѕГ·ГЁГІГј Г·ГЁГІ
 	if (GetAsyncKeyState(VK_END)) {
 
 		kiero::shutdown();
@@ -73,7 +73,7 @@ HRESULT __stdcall hkPresent(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT 
 
 		ImGui::Begin(xorstr(u8"RustD3D11"), nullptr, flags);
 		
-		// Таблицы
+		// Г’Г ГЎГ«ГЁГ¶Г»
 		if (ImGui::Button(xorstr(u8"AimBot"), ImVec2(100.f, 0.f)))
 			tabb = 0;
 		ImGui::SameLine(0.f, 2.f);
@@ -85,9 +85,9 @@ HRESULT __stdcall hkPresent(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT 
 		ImGui::SameLine(0.f, 2.f);
 		if (ImGui::Button(xorstr(u8"Info"), ImVec2(100.f, 0.f)))
 			tabb = 3;
-		// Таблицы
+		// Г’Г ГЎГ«ГЁГ¶Г»
 
-		// Таблицы ЧекБоксы
+		// Г’Г ГЎГ«ГЁГ¶Г» Г—ГҐГЄГЃГ®ГЄГ±Г»
 		if (tabb == 0) {
 			ImGui::Checkbox(xorstr(u8"Rage"), &Vars::Aimbot::rage);
 			ImGui::Checkbox(xorstr(u8"Legit"), &Vars::Aimbot::legit);
@@ -99,15 +99,15 @@ HRESULT __stdcall hkPresent(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT 
 			ImGui::Checkbox(xorstr(u8"Draw Distance"), &Vars::Visuals::distance);
 		}
 		else if (tabb == 2) {
-			ImGui::Checkbox(xorstr(u8"Человек Паук"), &Vars::Misc::spiderman);
-			ImGui::Checkbox(xorstr(u8"Фейковые Лаги"), &Vars::Misc::fakelag);
-			ImGui::Checkbox(xorstr(u8"Нет Отдачи Оружия"), &Vars::Misc::norecoil);
+			ImGui::Checkbox(xorstr(u8"Г—ГҐГ«Г®ГўГҐГЄ ГЏГ ГіГЄ"), &Vars::Misc::spiderman);
+			ImGui::Checkbox(xorstr(u8"Г”ГҐГ©ГЄГ®ГўГ»ГҐ Г‹Г ГЈГЁ"), &Vars::Misc::fakelag);
+			ImGui::Checkbox(xorstr(u8"ГЌГҐГІ ГЋГІГ¤Г Г·ГЁ ГЋГ°ГіГ¦ГЁГї"), &Vars::Misc::norecoil);
 		}
 		else if (tabb == 3) {
-			ImGui::Text(xorstr(u8"Разработчик меню: Darwin"));
-			ImGui::Text(xorstr(u8"Кнопка меню: Home | Выключить все: End"));
+			ImGui::Text(xorstr(u8"ГђГ Г§Г°Г ГЎГ®ГІГ·ГЁГЄ Г¬ГҐГ­Гѕ: Darwin"));
+			ImGui::Text(xorstr(u8"ГЉГ­Г®ГЇГЄГ  Г¬ГҐГ­Гѕ: Home | Г‚Г»ГЄГ«ГѕГ·ГЁГІГј ГўГ±ГҐ: End"));
 		}
-		// Таблицы ЧекБоксы
+		// Г’Г ГЎГ«ГЁГ¶Г» Г—ГҐГЄГЃГ®ГЄГ±Г»
 
 		ImGui::End();
 		ImGui::Render();
@@ -131,6 +131,8 @@ DWORD WINAPI MainThread(LPVOID lpReserved)
 	} while (!init_hook);
 	return TRUE;
 }
+
+
 
 BOOL WINAPI DllMain(HMODULE hMod, DWORD dwReason, LPVOID lpReserved)
 {
