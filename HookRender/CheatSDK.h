@@ -352,6 +352,7 @@ public:
 	}*/
 };
 
+
 class LPlayer : public CBasePlayer
 {
 public:
